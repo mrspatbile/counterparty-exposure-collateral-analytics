@@ -51,8 +51,16 @@ class CsvSecurityLoader(BaseDataLoader[Security]):
             return []
 
         required_columns = {
-            "isin", "name", "asset_type", "issuer", "issuer_type",
-            "country", "currency", "rating", "maturity_date", "market_value"
+            "isin",
+            "name",
+            "asset_type",
+            "issuer",
+            "issuer_type",
+            "country",
+            "currency",
+            "rating",
+            "maturity_date",
+            "market_value",
         }
         missing = required_columns - set(df.columns)
         if missing:
@@ -75,9 +83,7 @@ class CsvSecurityLoader(BaseDataLoader[Security]):
                 )
                 securities.append(security)
             except (ValueError, ValidationError) as e:
-                raise DataLoadingError(
-                    f"Row {idx + 2}: Failed to parse security: {e}"
-                ) from e
+                raise DataLoadingError(f"Row {idx + 2}: Failed to parse security: {e}") from e
 
         return securities
 
@@ -112,8 +118,12 @@ class CsvCounterpartyLoader(BaseDataLoader[Counterparty]):
             return []
 
         required_columns = {
-            "counterparty_id", "name", "country", "rating",
-            "exposure", "exposure_limit"
+            "counterparty_id",
+            "name",
+            "country",
+            "rating",
+            "exposure",
+            "exposure_limit",
         }
         missing = required_columns - set(df.columns)
         if missing:
@@ -132,9 +142,7 @@ class CsvCounterpartyLoader(BaseDataLoader[Counterparty]):
                 )
                 counterparties.append(counterparty)
             except (ValueError, ValidationError) as e:
-                raise DataLoadingError(
-                    f"Row {idx + 2}: Failed to parse counterparty: {e}"
-                ) from e
+                raise DataLoadingError(f"Row {idx + 2}: Failed to parse counterparty: {e}") from e
 
         return counterparties
 
@@ -220,9 +228,7 @@ class CsvHaircutScheduleLoader(BaseDataLoader[HaircutSchedule]):
         if df.empty:
             return []
 
-        required_columns = {
-            "asset_type", "maturity_bucket", "rating_bucket", "haircut_rate"
-        }
+        required_columns = {"asset_type", "maturity_bucket", "rating_bucket", "haircut_rate"}
         missing = required_columns - set(df.columns)
         if missing:
             raise DataLoadingError(f"Missing columns: {missing}")

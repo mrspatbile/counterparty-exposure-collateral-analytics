@@ -65,13 +65,29 @@ class Security(BaseModel):
     def validate_rating(cls, v: str) -> str:
         """Validate rating format (e.g., AAA, AA+, BBB-)."""
         valid_ratings = {
-            "AAA", "AA+", "AA", "AA-",
-            "A+", "A", "A-",
-            "BBB+", "BBB", "BBB-",
-            "BB+", "BB", "BB-",
-            "B+", "B", "B-",
-            "CCC+", "CCC", "CCC-",
-            "CC", "C", "D", "NR"
+            "AAA",
+            "AA+",
+            "AA",
+            "AA-",
+            "A+",
+            "A",
+            "A-",
+            "BBB+",
+            "BBB",
+            "BBB-",
+            "BB+",
+            "BB",
+            "BB-",
+            "B+",
+            "B",
+            "B-",
+            "CCC+",
+            "CCC",
+            "CCC-",
+            "CC",
+            "C",
+            "D",
+            "NR",
         }
         if v not in valid_ratings:
             raise ValueError(f"Invalid rating: {v}")
@@ -82,8 +98,13 @@ class Security(BaseModel):
     def validate_asset_type(cls, v: str) -> str:
         """Validate asset type."""
         valid_types = {
-            "sovereign", "covered_bond", "corporate_bond", "government_bond",
-            "equity", "abs", "cash"
+            "sovereign",
+            "covered_bond",
+            "corporate_bond",
+            "government_bond",
+            "equity",
+            "abs",
+            "cash",
         }
         if v.lower() not in valid_types:
             raise ValueError(f"Invalid asset_type: {v}")

@@ -32,8 +32,13 @@ class HaircutSchedule(BaseModel):
     def validate_asset_type(cls, v: str) -> str:
         """Validate asset type."""
         valid_types = {
-            "sovereign", "covered_bond", "corporate_bond", "government_bond",
-            "equity", "abs", "cash"
+            "sovereign",
+            "covered_bond",
+            "corporate_bond",
+            "government_bond",
+            "equity",
+            "abs",
+            "cash",
         }
         if v.lower() not in valid_types:
             raise ValueError(f"Invalid asset_type: {v}")

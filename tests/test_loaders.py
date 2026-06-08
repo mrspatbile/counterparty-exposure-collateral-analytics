@@ -58,10 +58,7 @@ class TestCsvSecurityLoader:
     def test_load_missing_columns(self, temp_data_dir: Path) -> None:
         """Missing required columns raises error."""
         csv_file = temp_data_dir / "securities.csv"
-        csv_file.write_text(
-            "isin,name,asset_type\n"
-            "XS1234567890,Test Bond,corporate_bond\n"
-        )
+        csv_file.write_text("isin,name,asset_type\nXS1234567890,Test Bond,corporate_bond\n")
 
         loader = CsvSecurityLoader()
         with pytest.raises(DataLoadingError, match="Missing columns"):
@@ -109,9 +106,7 @@ class TestCsvCounterpartyLoader:
     def test_load_empty_csv(self, temp_data_dir: Path) -> None:
         """Load empty CSV returns empty list."""
         csv_file = temp_data_dir / "empty.csv"
-        csv_file.write_text(
-            "counterparty_id,name,country,rating,exposure,exposure_limit\n"
-        )
+        csv_file.write_text("counterparty_id,name,country,rating,exposure,exposure_limit\n")
 
         loader = CsvCounterpartyLoader()
         counterparties = loader.load(csv_file)
@@ -165,8 +160,7 @@ class TestCsvCollateralPositionLoader:
         """Invalid ISIN raises error."""
         csv_file = temp_data_dir / "positions.csv"
         csv_file.write_text(
-            "counterparty_id,isin,quantity,market_value\n"
-            "CP001,INVALID,1000.000000,1000000.00\n"
+            "counterparty_id,isin,quantity,market_value\nCP001,INVALID,1000.000000,1000000.00\n"
         )
 
         loader = CsvCollateralPositionLoader()
@@ -198,9 +192,7 @@ class TestCsvHaircutScheduleLoader:
     def test_load_empty_csv(self, temp_data_dir: Path) -> None:
         """Load empty CSV returns empty list."""
         csv_file = temp_data_dir / "empty.csv"
-        csv_file.write_text(
-            "asset_type,maturity_bucket,rating_bucket,haircut_rate\n"
-        )
+        csv_file.write_text("asset_type,maturity_bucket,rating_bucket,haircut_rate\n")
 
         loader = CsvHaircutScheduleLoader()
         schedules = loader.load(csv_file)
@@ -223,8 +215,7 @@ class TestCsvHaircutScheduleLoader:
         """Haircut rate > 1.0 raises error."""
         csv_file = temp_data_dir / "haircuts.csv"
         csv_file.write_text(
-            "asset_type,maturity_bucket,rating_bucket,haircut_rate\n"
-            "sovereign,0-1y,AAA-AA,1.5000\n"
+            "asset_type,maturity_bucket,rating_bucket,haircut_rate\nsovereign,0-1y,AAA-AA,1.5000\n"
         )
 
         loader = CsvHaircutScheduleLoader()

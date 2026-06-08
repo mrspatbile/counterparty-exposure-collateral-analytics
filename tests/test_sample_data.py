@@ -151,6 +151,7 @@ class TestSampleDataGenerator:
         output1 = gen1.generate(output_dir=temp_data_dir, mode="new")
 
         import pandas as pd
+
         df1 = pd.read_csv(output1 / "counterparties.csv")
 
         # Generate again with same seed in different directory

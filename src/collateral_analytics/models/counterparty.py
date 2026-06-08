@@ -44,13 +44,29 @@ class Counterparty(BaseModel):
     def validate_rating(cls, v: str) -> str:
         """Validate rating format."""
         valid_ratings = {
-            "AAA", "AA+", "AA", "AA-",
-            "A+", "A", "A-",
-            "BBB+", "BBB", "BBB-",
-            "BB+", "BB", "BB-",
-            "B+", "B", "B-",
-            "CCC+", "CCC", "CCC-",
-            "CC", "C", "D", "NR"
+            "AAA",
+            "AA+",
+            "AA",
+            "AA-",
+            "A+",
+            "A",
+            "A-",
+            "BBB+",
+            "BBB",
+            "BBB-",
+            "BB+",
+            "BB",
+            "BB-",
+            "B+",
+            "B",
+            "B-",
+            "CCC+",
+            "CCC",
+            "CCC-",
+            "CC",
+            "C",
+            "D",
+            "NR",
         }
         if v not in valid_ratings:
             raise ValueError(f"Invalid rating: {v}")

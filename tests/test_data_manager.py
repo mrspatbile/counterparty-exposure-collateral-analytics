@@ -72,9 +72,7 @@ class TestAnalyticsDataset:
         # Should not raise
         dataset.validate_consistency()
 
-    def test_validate_consistency_missing_security(
-        self, sample_data_dir: Path
-    ) -> None:
+    def test_validate_consistency_missing_security(self, sample_data_dir: Path) -> None:
         """Missing security referenced in position raises error."""
         # Modify positions to reference non-existent security
         positions_csv = sample_data_dir / "collateral_positions.csv"
@@ -87,9 +85,7 @@ class TestAnalyticsDataset:
         with pytest.raises(DataLoadingError, match="missing securities"):
             manager.load(validate=True)
 
-    def test_validate_consistency_missing_counterparty(
-        self, sample_data_dir: Path
-    ) -> None:
+    def test_validate_consistency_missing_counterparty(self, sample_data_dir: Path) -> None:
         """Missing counterparty referenced in position raises error."""
         # Modify positions to reference non-existent counterparty
         positions_csv = sample_data_dir / "collateral_positions.csv"

@@ -157,9 +157,7 @@ class SampleDataGenerator:
         if seed is not None:
             random.seed(seed)
 
-        logger.info(
-            f"SampleDataGenerator initialized: {self.start_date} for {months} months"
-        )
+        logger.info(f"SampleDataGenerator initialized: {self.start_date} for {months} months")
 
     def _last_business_day_of_month(self, target_date: date) -> date:
         """Get last business day (Mon-Fri) of month.
@@ -174,9 +172,7 @@ class SampleDataGenerator:
         if target_date.month == 12:
             last_day = date(target_date.year + 1, 1, 1) - timedelta(days=1)
         else:
-            last_day = date(target_date.year, target_date.month + 1, 1) - timedelta(
-                days=1
-            )
+            last_day = date(target_date.year, target_date.month + 1, 1) - timedelta(days=1)
 
         # Back up to last business day (Mon-Fri)
         while last_day.weekday() > 4:  # 5=Saturday, 6=Sunday
@@ -317,7 +313,13 @@ class SampleDataGenerator:
                 "BBB": {"0-1y": 0.025, "1-3y": 0.035, "3-5y": 0.045, "5-10y": 0.055, "10y+": 0.07},
             },
             "corporate_bond": {
-                "AAA-AA": {"0-1y": 0.025, "1-3y": 0.035, "3-5y": 0.045, "5-10y": 0.055, "10y+": 0.07},
+                "AAA-AA": {
+                    "0-1y": 0.025,
+                    "1-3y": 0.035,
+                    "3-5y": 0.045,
+                    "5-10y": 0.055,
+                    "10y+": 0.07,
+                },
                 "A": {"0-1y": 0.05, "1-3y": 0.065, "3-5y": 0.08, "5-10y": 0.095, "10y+": 0.12},
                 "BBB": {"0-1y": 0.10, "1-3y": 0.125, "3-5y": 0.15, "5-10y": 0.175, "10y+": 0.20},
             },
@@ -367,6 +369,7 @@ class SampleDataGenerator:
             for item in output_dir.glob("sample_v*"):
                 if item.is_dir():
                     import shutil
+
                     shutil.rmtree(item)
                     logger.info(f"Deleted {item}")
             target_dir = output_dir / "sample_v1"
@@ -443,5 +446,6 @@ class SampleDataGenerator:
         to_delete = versions[:-keep_latest] if len(versions) > keep_latest else []
         for version_dir in to_delete:
             import shutil
+
             shutil.rmtree(version_dir)
             logger.info(f"Deleted {version_dir}")
