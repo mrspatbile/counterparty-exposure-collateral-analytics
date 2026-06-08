@@ -4,7 +4,6 @@ All loaders inherit from BaseDataLoader and parse CSV files into domain models.
 Monetary values are converted to Decimal. Dates are parsed as ISO 8601.
 """
 
-from datetime import datetime
 from decimal import Decimal
 from pathlib import Path
 

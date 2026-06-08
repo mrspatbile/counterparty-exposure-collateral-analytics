@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from collateral_analytics.loaders.data_manager import AnalyticsDataset, DataManager
+from collateral_analytics.loaders.data_manager import DataManager
 from collateral_analytics.utils.exceptions import DataLoadingError
 
 

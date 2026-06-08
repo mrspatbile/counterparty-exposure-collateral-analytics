@@ -1,7 +1,6 @@
 """Tests for CSV data loaders."""
 
 import tempfile
-from datetime import date
 from decimal import Decimal
 from pathlib import Path
 
