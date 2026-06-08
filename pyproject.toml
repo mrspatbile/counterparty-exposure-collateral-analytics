@@ -77,3 +77,8 @@ warn_redundant_casts = true     # warn about unnecessary type casts
 warn_unused_ignores = true      # warn about unused # type: ignore comments
 warn_no_return = true           # warn when a function may not return
 strict_equality = true          # check equality comparisons more strictly
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.6.0",
+]
