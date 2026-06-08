@@ -50,7 +50,7 @@ The implementation should be inspired by industry practices without attempting t
 
 Use:
 
-- Python 3.13.3
+- Python 3.13
 - pathlib
 - logging
 - pytest

@@ -94,7 +94,7 @@ or already present in the codebase.
 
 ## Code standards
 
-- Python 3.13.3
+- Python 3.13
 - Type hints throughout -- no untyped functions
 - Pydantic or dataclasses for all domain objects
 - pathlib for all file paths -- no string path concatenation
