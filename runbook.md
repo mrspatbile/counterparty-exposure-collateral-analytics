@@ -34,6 +34,15 @@ ruff format src tests
 mypy src
 ```
 
+## Before every push
+
+```bash
+ruff format src tests
+ruff check --fix src tests
+ruff check src tests
+pytest tests/
+```
+
 ## Tests
 
 ```bash
