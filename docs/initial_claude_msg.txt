@@ -1,0 +1,5 @@
+Read CLAUDE.md and docs/project_spec.md before doing anything else.
+
+We are starting with MRS-109: set up repository structure and base architecture.
+
+Set up the folder structure as defined in the spec, create the abstract base classes, custom exceptions, and logging configuration. Do not implement any concrete classes yet. Confirm with me before moving to MRS-110.

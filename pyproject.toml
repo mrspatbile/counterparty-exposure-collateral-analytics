@@ -1,0 +1,79 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]  # package build tools
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "counterparty-exposure-collateral-analytics"
+version = "0.1.0"
+description = "A counterparty exposure and collateral analytics platform"
+readme = "README.md"
+requires-python = ">=3.13.3"
+authors = [
+    {name = "mrspatbile"}
+]
+license = {text = "MIT"}
+
+dependencies = [
+    "pandas>=2.0.0",      # data manipulation and analytics calculations
+    "pydantic>=2.0.0",    # checks annotated fields and validates data models
+    "streamlit>=1.28.0",  # dashboard and reporting interface
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",      # run automated tests
+    "pytest-cov>=4.0.0",  # measure test coverage
+    "nbstripout>=0.7.0",  # remove notebook outputs before committing
+    "ruff>=0.5.0",        # lint, format, and sort imports
+    "mypy>=1.0.0",        # check type annotations before runtime
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]           # folder where pytest looks for tests
+python_files = "test_*.py"      # test file naming pattern
+python_classes = "Test*"        # test class naming pattern
+python_functions = "test_*"     # test function naming pattern
+addopts = "-v --tb=short"       # verbose output and shorter error tracebacks
+
+[tool.nbstripout]
+extra_keys = [
+    "metadata.kernelspec",
+    "metadata.language_info",
+    "metadata.vscode"
+]
+keep_output = false             # remove cell outputs from notebooks
+keep_count = false              # remove execution counts from notebooks
+
+[tool.ruff]
+line-length = 100              # maximum line length
+target-version = "py311"       # target Python version
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors (spacing, formatting issues)
+    "F",  # pyflakes errors (unused imports, undefined variables)
+    "W",  # pycodestyle warnings
+    "I",  # import sorting (replacement for isort)
+]
+ignore = [
+    "E501",  # ignore line-too-long warnings
+]
+
+[tool.ruff.format]
+quote-style = "double"         # use " instead of '
+indent-style = "space"         # use spaces for indentation
+
+
+[tool.mypy]
+python_version = "3.11"         # type-check as Python 3.11
+warn_return_any = true          # warn when a function returns Any
+warn_unused_configs = true      # warn about unused mypy settings
+check_untyped_defs = true       # type-check function bodies even without annotations
+no_implicit_optional = true     # require Optional[...] when None is allowed
+warn_redundant_casts = true     # warn about unnecessary type casts
+warn_unused_ignores = true      # warn about unused # type: ignore comments
+warn_no_return = true           # warn when a function may not return
+strict_equality = true          # check equality comparisons more strictly
