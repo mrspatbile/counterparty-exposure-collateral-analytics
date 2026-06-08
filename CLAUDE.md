@@ -104,6 +104,7 @@ or already present in the codebase.
 - No hardcoded datasets -- everything loads from CSV files in data/
 - No business logic inside dashboard code
 - Custom exceptions for domain errors (see spec for the full list)
+- Run `ruff check src tests` before marking any task done -- all checks must pass
 
 ---
 
