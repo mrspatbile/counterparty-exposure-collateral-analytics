@@ -1,6 +1,10 @@
 """Domain models and analysis results."""
 
 from collateral_analytics.models.collateral import CollateralPosition
+from collateral_analytics.models.concentration import (
+    ConcentrationAnalysis,
+    ConcentrationMetric,
+)
 from collateral_analytics.models.counterparty import Counterparty
 from collateral_analytics.models.coverage import CoverageAssessment, CoverageReport
 from collateral_analytics.models.eligibility import (
@@ -47,4 +51,6 @@ __all__ = [
     "HaircutReport",
     "CoverageAssessment",
     "CoverageReport",
+    "ConcentrationMetric",
+    "ConcentrationAnalysis",
 ]
