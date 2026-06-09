@@ -92,3 +92,36 @@ All output should be "All checks passed!"
 - `__init__.py` files: watch for unsorted imports (ruff will fix with --fix)
 - Test files: remove imports used only for type hints if not explicitly needed
 - Generator/utility files: don't define variables used only in comments
+## Running the Dashboard
+
+```bash
+# Activate virtual environment
+source .venv/bin/activate
+
+# Generate sample data first (if not already generated)
+python3 -c "from collateral_analytics.sample_data.generator import SampleDataGenerator; gen = SampleDataGenerator(); gen.generate()"
+
+# Run the Streamlit dashboard
+streamlit run dashboard/app.py
+```
+
+The dashboard will open in your default browser at `http://localhost:8501`
+
+### Dashboard Features
+
+- **Portfolio Overview**: Executive summary with KPIs and key findings
+- **Exposure Analytics**: Counterparty exposure rankings and utilization
+- **Collateral Eligibility**: Acceptance rates and rejection reasons
+- **Haircut Analysis**: Haircut application and distribution
+- **Coverage Monitoring**: Collateral coverage ratios and shortfalls
+- **Concentration Risk**: Herfindahl index and top concentrations
+- **Stress Testing**: Scenario impacts and breach detection
+- **Monitoring & Alerts**: Anomalies, risk commentary, and early warnings
+- **Data Export**: Download reports and position data as CSV
+
+### Troubleshooting
+
+If you encounter import errors, make sure:
+1. Virtual environment is activated: `source .venv/bin/activate`
+2. Dependencies are installed: `uv sync`
+3. You're running from the project root directory
