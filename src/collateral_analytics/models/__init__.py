@@ -30,6 +30,11 @@ from collateral_analytics.models.results import (
     HaircutResult,
 )
 from collateral_analytics.models.security import Security
+from collateral_analytics.models.stress import (
+    StressResult,
+    StressScenario,
+    StressTestReport,
+)
 
 __all__ = [
     "Security",
@@ -53,4 +58,7 @@ __all__ = [
     "CoverageReport",
     "ConcentrationMetric",
     "ConcentrationAnalysis",
+    "StressScenario",
+    "StressResult",
+    "StressTestReport",
 ]
