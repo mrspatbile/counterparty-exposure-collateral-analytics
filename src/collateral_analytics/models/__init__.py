@@ -2,6 +2,7 @@
 
 from collateral_analytics.models.collateral import CollateralPosition
 from collateral_analytics.models.counterparty import Counterparty
+from collateral_analytics.models.coverage import CoverageAssessment, CoverageReport
 from collateral_analytics.models.eligibility import (
     EligibilityAssessmentResult,
     EligibilityDecision,
@@ -44,4 +45,6 @@ __all__ = [
     "EligibilityAssessmentResult",
     "HaircutAssessment",
     "HaircutReport",
+    "CoverageAssessment",
+    "CoverageReport",
 ]
