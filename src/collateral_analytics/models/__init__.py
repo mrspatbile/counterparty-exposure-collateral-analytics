@@ -2,6 +2,11 @@
 
 from collateral_analytics.models.collateral import CollateralPosition
 from collateral_analytics.models.counterparty import Counterparty
+from collateral_analytics.models.eligibility import (
+    EligibilityAssessmentResult,
+    EligibilityDecision,
+    EligibilityRule,
+)
 from collateral_analytics.models.exposure import (
     ExposureAnalysisResult,
     ExposureMetrics,
@@ -30,4 +35,7 @@ __all__ = [
     "ExposureMetrics",
     "RankingResult",
     "ExposureAnalysisResult",
+    "EligibilityRule",
+    "EligibilityDecision",
+    "EligibilityAssessmentResult",
 ]

@@ -9,6 +9,7 @@ from collateral_analytics.engines.base import (
     BaseReportGenerator,
     BaseStressEngine,
 )
+from collateral_analytics.engines.eligibility import ConfigurableEligibilityEngine
 from collateral_analytics.engines.exposure import StandardExposureAnalyzer
 
 __all__ = [
@@ -20,4 +21,5 @@ __all__ = [
     "BaseStressEngine",
     "BaseReportGenerator",
     "StandardExposureAnalyzer",
+    "ConfigurableEligibilityEngine",
 ]
