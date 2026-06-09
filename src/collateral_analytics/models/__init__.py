@@ -29,6 +29,16 @@ from collateral_analytics.models.monitoring import (
     MonitoringReport,
     RiskCommentary,
 )
+from collateral_analytics.models.reports import (
+    ConcentrationReportSummary,
+    CoverageReportSummary,
+    EligibilityReportSummary,
+    ExposureReportSummary,
+    HaircutReportSummary,
+    MonitoringReportSummary,
+    PortfolioSummaryReport,
+    StressReportSummary,
+)
 from collateral_analytics.models.results import (
     AnalysisResult,
     CoverageMetrics,
@@ -71,4 +81,12 @@ __all__ = [
     "RiskCommentary",
     "EarlyWarning",
     "MonitoringReport",
+    "ExposureReportSummary",
+    "EligibilityReportSummary",
+    "HaircutReportSummary",
+    "CoverageReportSummary",
+    "ConcentrationReportSummary",
+    "StressReportSummary",
+    "MonitoringReportSummary",
+    "PortfolioSummaryReport",
 ]

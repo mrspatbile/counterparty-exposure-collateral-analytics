@@ -15,6 +15,7 @@ from collateral_analytics.engines.eligibility import ConfigurableEligibilityEngi
 from collateral_analytics.engines.exposure import StandardExposureAnalyzer
 from collateral_analytics.engines.haircut import ScheduleBasedHaircutEngine
 from collateral_analytics.engines.monitoring import StandardMonitoringEngine
+from collateral_analytics.engines.reporting import ReportGenerator
 from collateral_analytics.engines.stress import StandardStressEngine
 
 __all__ = [
@@ -32,4 +33,5 @@ __all__ = [
     "StandardConcentrationAnalyzer",
     "StandardStressEngine",
     "StandardMonitoringEngine",
+    "ReportGenerator",
 ]
