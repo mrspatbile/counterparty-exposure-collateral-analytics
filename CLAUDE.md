@@ -155,6 +155,17 @@ These remain rule-based. Do not blur this boundary.
 - Multiple counterparties, issuers, asset classes, ratings
 - Concentrations should be realistic enough to trigger alerts in some scenarios
 
+## Environment and tooling
+
+This repository uses uv.
+
+Use:
+
+- `uv sync` to install project dependencies
+- `uv add <package>` for runtime dependencies
+- `uv add --dev <package>` for development dependencies
+- `uv run <command>` to execute tools inside the project environment
+
 ---
 
 ## Disclaimer to include in README and docs

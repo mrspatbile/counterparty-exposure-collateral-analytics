@@ -1,4 +1,4 @@
-"""Analytics engines."""
+"""Analytics engines for exposure, eligibility, haircuts, concentration, and stress testing."""
 
 from collateral_analytics.engines.base import (
     BaseConcentrationAnalyzer,
@@ -9,6 +9,7 @@ from collateral_analytics.engines.base import (
     BaseReportGenerator,
     BaseStressEngine,
 )
+from collateral_analytics.engines.exposure import StandardExposureAnalyzer
 
 __all__ = [
     "BaseEngine",
@@ -18,4 +19,5 @@ __all__ = [
     "BaseConcentrationAnalyzer",
     "BaseStressEngine",
     "BaseReportGenerator",
+    "StandardExposureAnalyzer",
 ]

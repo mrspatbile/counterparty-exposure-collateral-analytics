@@ -19,13 +19,14 @@ dependencies = [
     "streamlit>=1.28.0",  # dashboard and reporting interface
 ]
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
     "pytest>=7.0.0",      # run automated tests
     "pytest-cov>=4.0.0",  # measure test coverage
     "nbstripout>=0.7.0",  # remove notebook outputs before committing
     "ruff>=0.5.0",        # lint, format, and sort imports
     "mypy>=1.0.0",        # check type annotations before runtime
+    "pre-commit>=4.6.0",
 ]
 
 [tool.setuptools.packages.find]
@@ -78,7 +79,4 @@ warn_unused_ignores = true      # warn about unused # type: ignore comments
 warn_no_return = true           # warn when a function may not return
 strict_equality = true          # check equality comparisons more strictly
 
-[dependency-groups]
-dev = [
-    "pre-commit>=4.6.0",
-]
+
