@@ -14,6 +14,10 @@ from collateral_analytics.models.exposure import (
     RankingResult,
 )
 from collateral_analytics.models.haircut import HaircutSchedule
+from collateral_analytics.models.haircut_assessment import (
+    HaircutAssessment,
+    HaircutReport,
+)
 from collateral_analytics.models.results import (
     AnalysisResult,
     CoverageMetrics,
@@ -38,4 +42,6 @@ __all__ = [
     "EligibilityRule",
     "EligibilityDecision",
     "EligibilityAssessmentResult",
+    "HaircutAssessment",
+    "HaircutReport",
 ]
