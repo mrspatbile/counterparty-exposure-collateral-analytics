@@ -4,6 +4,7 @@ import tempfile
 from datetime import date
 from decimal import Decimal
 from pathlib import Path
+from typing import Iterator
 
 import pytest
 
@@ -13,7 +14,7 @@ from collateral_analytics.models.haircut_assessment import HaircutAssessment
 
 
 @pytest.fixture
-def sample_data_dir() -> Path:
+def sample_data_dir() -> Iterator[Path]:
     """Create temporary directory with sample CSV files."""
     with tempfile.TemporaryDirectory() as tmpdir:
         tmpdir_path = Path(tmpdir)

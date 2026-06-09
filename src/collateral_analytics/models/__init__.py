@@ -23,6 +23,12 @@ from collateral_analytics.models.haircut_assessment import (
     HaircutAssessment,
     HaircutReport,
 )
+from collateral_analytics.models.monitoring import (
+    AnomalyScore,
+    EarlyWarning,
+    MonitoringReport,
+    RiskCommentary,
+)
 from collateral_analytics.models.results import (
     AnalysisResult,
     CoverageMetrics,
@@ -61,4 +67,8 @@ __all__ = [
     "StressScenario",
     "StressResult",
     "StressTestReport",
+    "AnomalyScore",
+    "RiskCommentary",
+    "EarlyWarning",
+    "MonitoringReport",
 ]

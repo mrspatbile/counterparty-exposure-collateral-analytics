@@ -3,6 +3,7 @@
 import tempfile
 from decimal import Decimal
 from pathlib import Path
+from typing import Iterator
 
 import pytest
 
@@ -16,7 +17,7 @@ from collateral_analytics.utils.exceptions import DataLoadingError
 
 
 @pytest.fixture
-def temp_data_dir() -> Path:
+def temp_data_dir() -> Iterator[Path]:
     """Create temporary directory for test CSVs."""
     with tempfile.TemporaryDirectory() as tmpdir:
         yield Path(tmpdir)

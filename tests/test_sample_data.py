@@ -3,6 +3,7 @@
 import tempfile
 from datetime import date
 from pathlib import Path
+from typing import Iterator
 
 import pytest
 
@@ -10,7 +11,7 @@ from collateral_analytics.sample_data.generator import SampleDataGenerator
 
 
 @pytest.fixture
-def temp_data_dir() -> Path:
+def temp_data_dir() -> Iterator[Path]:
     """Create temporary directory for generated data."""
     with tempfile.TemporaryDirectory() as tmpdir:
         yield Path(tmpdir)
